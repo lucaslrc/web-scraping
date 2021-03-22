@@ -14,15 +14,6 @@ type JSONRequest struct {
 	Search string `json:"search"`
 }
 
-type JSONResponse struct {
-	Search string `json:"search"`
-}
-
-type Result struct {
-	Title string `json:"title"`
-	Link  string `json:"link"`
-}
-
 func scrap(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
@@ -41,7 +32,38 @@ func scrap(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(500)
 	}
 
-	fmt.Println(googlesearch.Search(nil, "dolar"))
+	itens := []googlesearch.Result{}
 
-	w.WriteHeader(200)
+	reqResult, err := googlesearch.Search(nil, jsonRequestBody.Search)
+
+	if err != nil {
+		log.Println(err)
+		w.WriteHeader(500)
+	}
+
+	for i := 0; i < len(reqResult); i++ {
+		if len(reqResult[i].Title) != 0 {
+			itens = append(itens, reqResult[i])
+		}
+	}
+
+	resp, err := json.Marshal(itens)
+
+	if err != nil {
+		log.Println(err)
+		w.WriteHeader(500)
+	}
+
+	resp, err = json.MarshalIndent(itens, "", " ")
+
+	if err != nil {
+		log.Println(err)
+		w.WriteHeader(500)
+	}
+
+	w.Write(resp)
+
+	for i := 0; i < len(itens); i++ {
+		fmt.Println(itens[i].Title)
+	}
 }

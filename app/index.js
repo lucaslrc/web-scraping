@@ -10,6 +10,17 @@ function getScrap() {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(searchBody)
-        }).then(result => alert(result.status))
+        })
+        .then(res => res.json())
+        .then(json => {
+            let list = document.getElementById('listResults')
+
+            for (let i = 0; i < json.length; i++) {
+                const projectEl = document.createElement('div')
+                projectEl.innerHTML = json[i].title
+                projectEl.innerHTML = json[i].url
+                list.appendChild(projectEl)
+            }
+        })
     }
 }
