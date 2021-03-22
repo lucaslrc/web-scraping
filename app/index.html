@@ -11,13 +11,14 @@
 </head>
 <body class="bg-dark">
     <div id="result" class="container-sm text-center" style="color: white; margin-top: 5%;">
-        <img src="wwwroot/images/soldering.png" width="150px" height="150px">
+        <a href="index.html"><img src="wwwroot/images/soldering.png" width="150px" height="150px"></a>
         <h1>Web Scraping with GoLang</h1>
-        <br>
-            <input id="scrapInput" class="form-control me-2" type="search" aria-label="Search" style="text-align: center;">
-            <br>
-            <button class="btn btn-outline-primary" type="button" onclick="getScrap()">Search</button>
-        <br>
+        <p>Search anything!</p>
+            <form method="post" onsubmit="getScrap()">
+                <input id="scrapInput" maxlength="100" class="form-control me-2" type="search" aria-label="Search" style="text-align: center;">
+                <br>
+                <button class="btn btn-outline-primary" type="submit">Search</button>
+            </form>
         <br>
         <p>Google testing</p>
     </div>
