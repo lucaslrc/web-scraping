@@ -13,14 +13,24 @@ function getScrap() {
         })
         .then(res => res.json())
         .then(json => {
-            let list = document.getElementById('listResults')
+            let table = document.getElementById('tableResults')
+            removeAllChildNodes(table)
 
             for (let i = 0; i < json.length; i++) {
-                const projectEl = document.createElement('div')
-                projectEl.innerHTML = json[i].title
-                projectEl.innerHTML = json[i].url
-                list.appendChild(projectEl)
+                let tr = document.createElement('tbody')
+                let row = `<tr>
+                                <td>${json[i].title}</td>
+                                <td><a href="${json[i].url}" target="_blank">Link to view</a></td>
+                            </tr>`
+                tr.innerHTML = row
+                table.appendChild(tr)
             }
         })
+    }
+}
+
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild)
     }
 }
