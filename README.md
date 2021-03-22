@@ -14,10 +14,10 @@
   
   <span color="orange">Obs</span>: Os próximos passos devem ser feitos até o momento em que o problema da dependência google-search esteja resolvido (https://github.com/rocketlaunchr/google-search/pull/7/files)
   
-  - Procure pelo Go Workspace digitando o comando `go env GOPATH`;
+  - Procure pelo Go Workspace digitando o comando `go env GOPATH`
   - Vá até o diretório mostrado no terminal e procure pela dependência citada acima, exemplo:
   `$PATH/go/pkg/mod/github.com/rocketlaunchr/google-search@v1.1.1`
-  - Usando um editor de texto abra o arquivo `search.go`;
+  - Usando um editor de texto abra o arquivo `search.go`
   - Nele você deve procurar o seguinte bloco de código:
   ```
   // https://www.w3schools.com/cssref/css_selectors.asp
@@ -48,5 +48,5 @@
   
 <span color="orange">Obs</span>: Neste momento não é preciso seguir os passos acima caso o problema esteja resolvido;
 
-  - Vá até o diretório do projeto e digite o comando `go install ./src/`;
-  - Rode a aplicação com o comando `go run ./src/`.
+  - Vá até o diretório do projeto e digite o comando `go install ./src/`
+  - Rode a aplicação com o comando `go run ./src/`
