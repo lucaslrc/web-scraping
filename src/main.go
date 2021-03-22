@@ -9,6 +9,7 @@ import (
 
 func main() {
 	r := mux.NewRouter().StrictSlash(true)
+
 	r.PathPrefix("/home/").Handler(http.StripPrefix("/home/", http.FileServer(http.Dir("./app/"))))
 	r.HandleFunc("/scrap", scrap).Methods("POST")
 	http.Handle("/", r)
