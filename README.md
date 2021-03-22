@@ -1,18 +1,18 @@
 # web-scraping
 
-#### Instruções para uso da aplicação:
+## Instruções para uso da aplicação:
 
-Requisitos:
+#### Requisitos:
   - É necessário uma conexão com a internet;
   - É necessário ter o Git instalado em sua máquina;
   - É necessário ter o Go instalado em sua máquina, caso não tenha visite https://golang.org/dl/ para fazer o download.
   
-Como iniciar a aplicação:
+## Como iniciar a aplicação:
   - Faça o clone do respositório em sua máquina (o diretório é de sua preferência);
   - Usando um terminal (windows com gitbash ou linux com qualquer terminal shell) abra o diretório do projeto;
   - Utilize o comando `go get -d -v` para fazer o download das dependências necessárias;
   
-  Obs: Os próximos passos devem ser feitos até o momento em que o problema da dependência google-search for resolvida (https://github.com/rocketlaunchr/google-search/pull/7/files)
+  <span color="orange">Obs</span>: Os próximos passos devem ser feitos até o momento em que o problema da dependência google-search for resolvida (https://github.com/rocketlaunchr/google-search/pull/7/files)
   
   - Procure pelo Go Workspace digitando o comando `go env GOPATH`;
   - Vá até o diretório mostrado no terminal e procure pela dependência citada acima, exemplo:
@@ -27,7 +27,7 @@ Como iniciar a aplicação:
 
 		linkHref, _ := sel.Find("a").Attr("href")
 		linkText := strings.TrimSpace(linkHref)
-		titleText := strings.TrimSpace(sel.Find("div > div > a > h3 > span").Text())  <---- irá alterar
+		titleText := strings.TrimSpace(sel.Find("div > div > a > h3 > span").Text()) <---- irá alterar esta linha
 
 		descText := strings.TrimSpace(sel.Find("div > div > div > span > span").Text())
 
@@ -43,3 +43,10 @@ Como iniciar a aplicação:
 		}
 	})
   ```
+  - Remova o elemento 'span' do método `sel.Find("div > div > a > h3 > span")` como neste pull request: https://github.com/rocketlaunchr/google-search/pull/7/files;
+  - Salve o arquivo;
+  
+<span color="orange">Obs</span>: Neste momento não é preciso seguir os passos acima caso o problema esteja resolvido;
+
+  - Vá até o diretório do projeto e digite o comando `go install ./src/`;
+  - Rode a aplicação com o comando `go run ./src/`.
