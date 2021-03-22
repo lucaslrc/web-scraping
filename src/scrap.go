@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"log"
 	"net/http"
@@ -62,8 +61,4 @@ func scrap(w http.ResponseWriter, r *http.Request) {
 	}
 
 	w.Write(resp)
-
-	for i := 0; i < len(itens); i++ {
-		fmt.Println(itens[i].Title)
-	}
 }

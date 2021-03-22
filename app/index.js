@@ -20,7 +20,9 @@ function getScrap() {
                 let tr = document.createElement('tbody')
                 let row = `<tr>
                                 <td>${json[i].title}</td>
-                                <td><a href="${json[i].url}" target="_blank">Link to view</a></td>
+                            </tr>
+                            <tr>
+                                <th><a href="${json[i].url}" target="_blank">${json[i].url}</a></th>
                             </tr>`
                 tr.innerHTML = row
                 table.appendChild(tr)
