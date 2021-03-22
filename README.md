@@ -12,7 +12,7 @@
   - Usando um terminal (windows com gitbash ou linux com qualquer terminal shell) abra o diretório do projeto;
   - Utilize o comando `go get -d -v` para fazer o download das dependências necessárias;
   
-  <span color="orange">Obs</span>: Os próximos passos devem ser feitos até o momento em que o problema da dependência google-search for resolvida (https://github.com/rocketlaunchr/google-search/pull/7/files)
+  <span color="orange">Obs</span>: Os próximos passos devem ser feitos até o momento em que o problema da dependência google-search esteja resolvido (https://github.com/rocketlaunchr/google-search/pull/7/files)
   
   - Procure pelo Go Workspace digitando o comando `go env GOPATH`;
   - Vá até o diretório mostrado no terminal e procure pela dependência citada acima, exemplo:
