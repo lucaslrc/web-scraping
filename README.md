@@ -50,3 +50,4 @@
 
   - Vá até o diretório do projeto e digite o comando `go install ./src/`
   - Rode a aplicação com o comando `go run ./src/`
+  - O servidor estará rodando em http://localhost:8080/home/
