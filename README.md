@@ -10,7 +10,7 @@
 ## Como iniciar a aplicação:
   - Faça o clone do respositório em sua máquina (o diretório é de sua preferência);
   - Usando um terminal (windows com gitbash ou linux com qualquer terminal shell) abra o diretório do projeto;
-  - Utilize o comando `go get -d -v` para fazer o download das dependências necessárias;
+  - Utilize o comando `go get -d -v ./src/` para fazer o download das dependências necessárias;
   
   <span color="orange">Obs</span>: Os próximos passos devem ser feitos até o momento em que o problema da dependência google-search esteja resolvido (https://github.com/rocketlaunchr/google-search/pull/7/files)
   
