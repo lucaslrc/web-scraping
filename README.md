@@ -14,3 +14,6 @@
   - Instale as dependências digitando o comando `go install ./src/`
   - Rode a aplicação com o comando `go run ./src/`
   - O servidor estará rodando em http://localhost:8080/home/
+
+P.s. Durante o desenvolvimento deste projeto tive que ajudar em uma alteração de uma das dependências, deixo o link para análise:
+https://github.com/rocketlaunchr/google-search/pull/7
