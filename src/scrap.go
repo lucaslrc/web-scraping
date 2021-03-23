@@ -35,7 +35,6 @@ func scrap(w http.ResponseWriter, r *http.Request) {
 	itens := []googlesearch.Result{}
 
 	reqResult, err := googlesearch.Search(nil, jsonRequestBody.Search)
-
 	if err != nil {
 		log.Println(err)
 		w.WriteHeader(http.StatusInternalServerError)
@@ -48,14 +47,12 @@ func scrap(w http.ResponseWriter, r *http.Request) {
 	}
 
 	resp, err := json.Marshal(itens)
-
 	if err != nil {
 		log.Println(err)
 		w.WriteHeader(http.StatusInternalServerError)
 	}
 
 	resp, err = json.MarshalIndent(itens, "", " ")
-
 	if err != nil {
 		log.Println(err)
 		w.WriteHeader(http.StatusInternalServerError)
